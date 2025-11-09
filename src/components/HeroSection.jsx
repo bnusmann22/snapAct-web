@@ -1,9 +1,9 @@
 'use client'
 
 // src/components/HeroSection.tsx
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Github } from 'lucide-react'
+import { useState } from 'react'
 
 const ANIMATION_TIMINGS = {
   logo: { duration: 0.8 },
@@ -15,7 +15,7 @@ const ANIMATION_TIMINGS = {
 
 const LANGUAGES = ['ENG', 'YOR', 'HAU', 'IGB']
 
-const GITHUB_REPO_URL = 'https://github.com/your-repo'
+const GITHUB_REPO_URL = 'https://github.com/bnusmann22/snapAct-web'
 
 const HeroSection = () => {
   const [language, setLanguage] = useState('ENG')
@@ -47,11 +47,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: ANIMATION_TIMINGS.logo.duration }}
         >
-          <img
-            src="/logo-full.png"
-            alt="SnapAct Logo"
-            className="h-10 w-auto drop-shadow-[0_0_10px_rgba(255,115,0,0.6)]"
-          />
+          <img src="/VECTOR.png" alt="SnapAct Logo" className="h-10 w-auto " />
         </motion.div>
 
         {/* GitHub Star Glass Pane */}
@@ -73,7 +69,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_TIMINGS.title.duration }}
-          className="text-5xl md:text-7xl font-extrabold leading-tight bg-gradient-to-r from-[#00ffff] to-[#ff7300] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,115,0,0.6)]"
+          className="text-5xl md:text-7xl font-extrabold leading-tight  bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,115,0,0.6)]"
         >
           Report it with pictures.
         </motion.h1>
@@ -101,7 +97,7 @@ const HeroSection = () => {
           }}
           className="mt-8 flex gap-4"
         >
-          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff7300] to-[#ff9e00] text-black font-semibold shadow-[0_0_20px_rgba(255,115,0,0.6)] hover:scale-105 transition-transform">
+          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff7300] to-[#ff9e00] text-black font-semibold shadow-[0_0_20px_rgba(255,115,0,0.6)] hover:scale-95 transition-transform">
             Download App
           </button>
           <button className="px-6 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10 transition-all">
@@ -127,7 +123,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.1 }}
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
               language === lang
-                ? 'bg-gradient-to-r from-[#00ffff]/80 to-[#ff7300]/80 text-black shadow-[0_0_10px_rgba(255,115,0,0.5)]'
+                ? ' text-black shadow-[0_0_10px_rgba(255,115,0,0.5)]'
                 : 'bg-white/10 text-white/80 hover:bg-white/20'
             }`}
           >
