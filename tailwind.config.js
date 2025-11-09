@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -8,7 +8,7 @@ export default {
         'neon-blue': '#046a8bff',
       },
       fontFamily: {
-        orbitron: ['Orbitron', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
       },
       boxShadow: {
@@ -18,4 +18,3 @@ export default {
   },
   plugins: [],
 }
-
