@@ -88,7 +88,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_TIMINGS.title.duration }}
           class="
-          text-5xl md:text-8xl font-extrabold leading-none md:leading-snug
+          text-5xl md:text-8xl font-extrabold font-display leading-none md:leading-snug
           text-transparent [-webkit-text-stroke:2px_black]
            text-blue-950
         "
@@ -105,7 +105,8 @@ const HeroSection = () => {
           }}
           className="mt-4 text-lg font-roboto md:text-4xl text-black"
         >
-          It's like Snap, but takes{' '}
+          It's just like <span className="text-yellow italic">Snap 👻</span>,
+          but takes{' '}
           <span className="text-[#ff7300] font-semibold">ACTION.</span>
         </motion.p>
 
@@ -120,14 +121,14 @@ const HeroSection = () => {
           delay: ANIMATION_TIMINGS.languagePane.delay,
           duration: ANIMATION_TIMINGS.languagePane.duration,
         }}
-        className="absolute top-[60%] md:top-1/2 right-[-9px] md:right-8 -translate-y-1/2 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-2 md:p-3 flex flex-col gap-2 md:gap-3 z-20 shadow-lg"
+        className="absolute top-[60%] md:top-1/2 md:fixed right-[-9px] md:right-8 -translate-y-1/2 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-2 md:p-3 flex flex-col gap-2 md:gap-3 z-20 shadow-lg"
       >
         {LANGUAGES.map((lang) => (
           <motion.button
             key={lang}
             onClick={() => handleLanguageChange(lang)}
             whileHover={{ scale: 1.1 }}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+            className={`px-4 py-2 rounded-lg text-sm font-semibold  transition-all ${
               language === lang
                 ? ' text-black '
                 : 'bg-white/10 text-white/80 hover:bg-white/20'
