@@ -3,6 +3,26 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
 
+import { motion } from 'framer-motion'
+
+const ANIMATION_TIMINGS = {
+  logo: { duration: 0.8 },
+  title: { duration: 1 },
+  subtitle: { delay: 0.3, duration: 0.8 },
+  buttons: { delay: 0.6, duration: 0.8 },
+  languagePane: { delay: 0.8, duration: 0.7 },
+}
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: ANIMATION_TIMINGS.subtitle.delay,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 // Register the ScrollTrigger plugin once
 gsap.registerPlugin(ScrollTrigger)
 
@@ -51,9 +71,6 @@ function Features() {
       // We assume each card is 100vw wide
       const cardWidth = window.innerWidth
       const totalScrollWidth = cardWidth * features.length
-
-      // The distance the container needs to move horizontally.
-      // We subtract one card's width because the animation starts at x: 0 (showing the first card)
       const distanceToMove = totalScrollWidth - cardWidth
 
       // The ScrollTrigger length for the pinning effect
@@ -88,8 +105,19 @@ function Features() {
   return (
     <>
       {/* 1. Introductory Content */}
-      <div className="h-screen flex items-center justify-center bg-gray-100 text-2xl font-bold">
-        Discover Our Core Features ↓
+      <div className="p-48 ">
+        <motion.p
+          className="mt-4 text-lgx font-sans md:text-6xl text-black whitespace-nowrap "
+        >
+          {/* Subtitle text is now a single string from translations */}
+          <motion.span  >but takes </motion.span>
+
+          <motion.span
+            className="text-white md:text-6xl  font-extrabold text-red-800 "
+          >
+           ACTION {"   "} ➡ -     - - 🎯
+          </motion.span>
+        </motion.p>
       </div>
 
       {/* 2. Horizontal Scroll Section - The container that gets pinned */}

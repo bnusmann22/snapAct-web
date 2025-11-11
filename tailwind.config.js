@@ -9,12 +9,21 @@ export default {
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
+        display: ['Momo Trust Display', 'sans-serif'],
+        cursive: ['"Dancing Script"', 'cursive'],
       },
       boxShadow: {
         'neon-glow': '0 0 10px #046a8bff',
       },
+      backdropBlur: {
+        'sm': '4px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '24px',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-filters')
+  ],
 }
