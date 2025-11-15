@@ -45,25 +45,25 @@ const translations = {
     subtitlePart1: "... it's just like",
     snapChatText: "SnapChat",
     starOnGitHub: "⭐ Star on GitHub",
-    // Add more phrases as needed
+    
   },
   YOR: {
-    title: "Fi aworan sọ funni.", // Report it with pictures.
-    subtitlePart1: "... o dabi", // it's just like
-    snapChatText: "SnapChat", // Brand names usually aren't translated
-    starOnGitHub: "⭐ Ṣe irawọ lori GitHub", // Star on GitHub
+    title: "Fi aworan sọ funni.", 
+    subtitlePart1: "... o dabi", 
+    snapChatText: "SnapChat", 
+    starOnGitHub: "⭐ Ṣe irawọ lori GitHub", 
   },
   HAU: {
-    title: "Ba da rahoto da hotuna.", // Report it with pictures.
-    subtitlePart1: "... yana kamar", // it's just like
+    title: "Ba da rahoto da hotuna.", 
+    subtitlePart1: "... yana kamar", 
     snapChatText: "SnapChat",
-    starOnGitHub: "⭐ Ba da tauraro a GitHub", // Star on GitHub
+    starOnGitHub: "⭐ Ba da tauraro a GitHub", 
   },
   IGB: {
-    title: "Kọ akụkọ ya na foto.", // Report it with pictures.
-    subtitlePart1: "... ọ dị ka", // it's just like
+    title: "Kọ akụkọ ya na foto.", 
+    subtitlePart1: "... ọ dị ka", 
     snapChatText: "SnapChat",
-    starOnGitHub: "⭐ Nye kpakpando na GitHub", // Star on GitHub
+    starOnGitHub: "⭐ Nye kpakpando na GitHub", 
   },
 };
 
@@ -138,7 +138,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_TIMINGS.title.duration }}
           className="
-          text-5xl md:text-8xl font-extrabold font-display leading-none md:leading-snug
+          text-5xl md:text-8xl font-extrabold leading-none md:leading-snug
            text-blue-950
         "
         >
@@ -156,7 +156,7 @@ const HeroSection = () => {
 
           <motion.span
             variants={snapVariants}
-            className="italic text-white md:text-6xl  text-yellow-400 inline-flex items-center"
+            className="italic  md:text-6xl  text-yellow-400 inline-flex items-center"
           >
             {currentTranslations.snapChatText}
             <img

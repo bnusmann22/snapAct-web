@@ -54,10 +54,6 @@ const features = [
   },
 ]
 
-/**
- * Renamed main component to Features.
- * Implements a horizontal scrolling effect using GSAP ScrollTrigger.
- */
 function Features() {
   const sectionRef = useRef(null)
   const containerRef = useRef(null)
@@ -83,8 +79,7 @@ function Features() {
         end: `+=${pinLength}`,
         pin: true,
         scrub: 1,
-        // This is a common pattern for horizontal scroll pinning
-        //
+        
       })
 
       gsap.to(containerRef.current, {
@@ -105,17 +100,17 @@ function Features() {
   return (
     <>
       {/* 1. Introductory Content */}
-      <div className="p-48 ">
+      <div className="p-48 bg-slate-200">
         <motion.p
           className="mt-4 text-lgx font-sans md:text-6xl text-black whitespace-nowrap "
         >
           {/* Subtitle text is now a single string from translations */}
-          <motion.span  >but takes </motion.span>
+          <motion.span >but takes </motion.span>
 
           <motion.span
-            className="text-white md:text-6xl  font-extrabold text-red-800 "
+            className=" md:text-6xl  font-extrabold text-red-800 "
           >
-           ACTION {"   "} ➡ -     - - 🎯
+           ACTION {"   "} 🎯
           </motion.span>
         </motion.p>
       </div>
