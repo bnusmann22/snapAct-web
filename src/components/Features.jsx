@@ -13,15 +13,6 @@ const ANIMATION_TIMINGS = {
   languagePane: { delay: 0.8, duration: 0.7 },
 }
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      delayChildren: ANIMATION_TIMINGS.subtitle.delay,
-      staggerChildren: 0.2,
-    },
-  },
-};
 
 // Register the ScrollTrigger plugin once
 gsap.registerPlugin(ScrollTrigger)
@@ -100,37 +91,39 @@ function Features() {
   return (
     <>
       {/* 1. Introductory Content */}
-      <div className="p-48 bg-slate-200">
-        <motion.p
-          className="mt-4 text-lgx font-sans md:text-6xl text-black whitespace-nowrap "
-        >
-          {/* Subtitle text is now a single string from translations */}
-          <motion.span >but takes </motion.span>
-
-          <motion.span
-            className=" md:text-6xl  font-extrabold text-red-800 "
-          >
-           ACTION {"   "} 🎯
-          </motion.span>
-        </motion.p>
-      </div>
+      
 
       {/* 2. Horizontal Scroll Section - The container that gets pinned */}
       <section
         ref={sectionRef}
-        className="w-full h-screen relative overflow-hidden bg-black text-white"
+        className="w-full h-screen relative overflow-hidden bg-slate-200"
       >
-        <div
-          ref={containerRef}
-          className="flex h-full"
-          // Set the total width to accommodate all cards side-by-side (e.g., 5 cards = 500vw)
-          style={{ width: `${features.length * 100}vw` }}
-        >
+
+          <div
+            ref={containerRef}
+            className="flex h-full"
+            // Set the total width to accommodate all cards side-by-side (e.g., 5 cards = 500vw)
+            style={{ width: `${features.length * 100}vw` }}
+          >
+            <div className="p-48 bg-slate-200 mr-[600px]">
+            <motion.p
+              className="mt-4 text-lgx font-sans md:text-6xl text-black whitespace-nowrap "
+            >
+              {/* Subtitle text is now a single string from translations */}
+              <motion.span >but takes </motion.span>
+
+              <motion.span
+                className=" md:text-6xl  font-extrabold text-red-800 "
+              >
+              ACTION {"   "} 🎯
+              </motion.span>
+            </motion.p>
+          </div>
           {features.map((feature, i) => (
             // Each card takes up 100vw
             <div
               key={i}
-              className="w-screen flex-shrink-0 flex items-center justify-center p-10 relative"
+              className="w-screen flex-shrink-0 flex items-center justify-center p-10 relative  bg-black text-white"
             >
               <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 {/* Text Content */}
