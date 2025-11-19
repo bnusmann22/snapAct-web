@@ -70,7 +70,6 @@ const translations = {
 const HeroSection = () => {
   const [language, setLanguage] = useState('ENG');
 
-  // Use useMemo to get the current translations when the language changes
   const currentTranslations = useMemo(() => translations[language], [language]);
 
   const handleLanguageChange = (lang) => {
@@ -90,6 +89,7 @@ const HeroSection = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
+      <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px]"></div>
       <header className="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-6 z-20 md:px-16">
         {/* Logo */}
         <motion.div
@@ -115,7 +115,7 @@ const HeroSection = () => {
             border border-white/30
             text-white
             transition-all
-            flex items-center justify-end gap-3
+            flex items-center justify-end gap-3 cursor-pointer
           "
         >
           <Github className="w-6 h-6 text-blue-900" />

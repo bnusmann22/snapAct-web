@@ -145,11 +145,6 @@ function Features() {
           ))}
         </div>
       </section>
-
-      {/* 3. Post-Scroll Content */}
-      <div className="h-screen flex items-center justify-center bg-gray-100 text-2xl font-bold">
-        Ready to take the next step?
-      </div>
     </>
   )
 }
