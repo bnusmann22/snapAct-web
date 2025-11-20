@@ -17,3 +17,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@keyframes animateText{
+  from{
+
+  }
+  to{
+    
+  }
+}
