@@ -3,7 +3,7 @@
 > **Snap it. Fix it.**  
 > The camera-first civic reporting app that makes fixing potholes, broken lights, illegal dumps, and other city problems as fast and addictive as posting a Snapchat story.
 
-![SnapAct Hero Preview]([public/hero-preview.jpg](https://ibb.co/hRch3tbF))
+![SnapAct Hero Preview](https://i.ibb.co/C56NRTgK/Snap-Act-Report-with-Pictures-Google-Chrome-11-23-2025-11-51-46-AM.png)
 
 ## 🚀 What is SnapAct?
 
