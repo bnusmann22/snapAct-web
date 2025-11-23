@@ -2,6 +2,7 @@
 
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { Apple, Store, Play } from 'lucide-react';
 import { useEffect, useRef } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -81,11 +82,12 @@ export default function DownloadSection({ language }: { language: "ENG" | "HAU" 
         </div>
 
         {/* App Store Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-foreground text-background font-semibold rounded-lg hover:bg-foreground/90 transition-colors">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center ">
+          <button className=" cursor-pointer active:cursor-progress px-8 flex gap-2 py-4 bg-foreground text-background font-semibold rounded-lg hover:bg-foreground/90 transition-colors">
+            <Apple size={24} />
             {t.appStore}
           </button>
-          <button className="px-8 py-4 bg-accent-primary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors">
+          <button className="cursor-pointer active:cursor-progress px-8 py-4 bg-accent-primary text-black hover:text-white font-semibold rounded-lg hover:bg-orange-800 border-2 border-amber-950 transition-colors">
             {t.googlePlay}
           </button>
         </div>

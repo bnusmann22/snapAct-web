@@ -11,6 +11,7 @@ import ImpactStoriesSection from "@/components/impact-stories-section"
 import DownloadSection from "@/components/download-section"
 import FAQSection from "@/components/faq-section"
 import Footer from "@/components/footer"
+import IntroSection from "@/components/intro-section"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -24,6 +25,9 @@ export default function Page() {
 
       {/* Hero Section */}
       <HeroSection language={language} />
+
+      {/* Intro Section */}
+      <IntroSection language={language} />
 
       {/* How It Works Section */}
       <HowItWorksSection language={language} />

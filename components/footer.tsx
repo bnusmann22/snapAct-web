@@ -50,17 +50,17 @@ export default function Footer({ language }: { language: "ENG" | "HAU" | "YOR" |
             <h4 className="font-semibold text-foreground mb-4">{t.aboutUs}</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
               <li>
-                <a href="#" className="hover:text-accent-primary transition-colors">
-                  Our Mission
+                <a href="/about" className="hover:text-accent-primary transition-colors">
+                  {t.aboutUs}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent-primary transition-colors">
+                <a href="/about" className="hover:text-accent-primary transition-colors">
                   Team
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent-primary transition-colors">
+                <a href="/about" className="hover:text-accent-primary transition-colors">
                   Blog
                 </a>
               </li>
