@@ -1,57 +1,27 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef } from "react"
 import { motion } from "framer-motion"
-import { Share2, Zap, Globe, Lock, LightbulbOff as LightningBolt, TrendingUp, Users2, Map } from "lucide-react"
+import { Share2, Zap, Globe, Lock, TrendingUp, Users2, Map } from "lucide-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
+// Keep your full multilingual data exactly as you had it
 const featureContent = {
   ENG: {
     title: "Powerful Civic Reporting",
     features: [
-      {
-        title: "Instant Capture",
-        description: "Document issues in real-time with your camera",
-        icon: Share2,
-      },
-      {
-        title: "Real Impact",
-        description: "Your reports directly reach local authorities",
-        icon: Zap,
-      },
-      {
-        title: "Global Reach",
-        description: "Join a community making cities better",
-        icon: Globe,
-      },
-      {
-        title: "Privacy-Focused",
-        description: "End-to-end encryption and anonymized reports",
-        icon: Lock,
-      },
-      {
-        title: "Smart Detection",
-        description: "AI auto-categorizes issues for faster resolution",
-        icon: LightningBolt,
-      },
-      {
-        title: "Track Progress",
-        description: "Get real-time updates on your reported issues",
-        icon: TrendingUp,
-      },
-      {
-        title: "Community Power",
-        description: "Upvote, discuss, and amplify collective action",
-        icon: Users2,
-      },
-      {
-        title: "Precise Location",
-        description: "Automatic geo-tagging for accurate reporting",
-        icon: Map,
-      },
+      { title: "Instant Capture", description: "Document issues in real-time with your camera", icon: Share2 },
+      { title: "Real Impact", description: "Your reports directly reach local authorities", icon: Zap },
+      { title: "Global Reach", description: "Join a community making cities better", icon: Globe },
+      { title: "Privacy-Focused", description: "End-to-end encryption and anonymized reports", icon: Lock },
+      { title: "Smart Detection", description: "AI auto-categorizes issues for faster resolution", icon: Zap },
+      { title: "Track Progress", description: "Get real-time updates on your reported issues", icon: TrendingUp },
+      { title: "Community Power", description: "Upvote, discuss, and amplify collective action", icon: Users2 },
+      { title: "Precise Location", description: "Automatic geo-tagging for accurate reporting", icon: Map },
     ],
   },
   HAU: {
@@ -80,7 +50,7 @@ const featureContent = {
       {
         title: "Ware Tutudde",
         description: "AI yana tsara matsala don sauri",
-        icon: LightningBolt,
+        icon: Zap,
       },
       {
         title: "Bincika Ci Gaba",
@@ -125,7 +95,7 @@ const featureContent = {
       {
         title: "Ọgbọ́ Abẹ̀",
         description: "AI ṣe akiyesi ati ṣiṣe ẹka fun iṣu",
-        icon: LightningBolt,
+        icon: Zap,
       },
       {
         title: "Ṣawari Iyipada",
@@ -170,7 +140,7 @@ const featureContent = {
       {
         title: "Nyocha Ọgbụgbụ",
         description: "AI na-akọ ihe n'ime ụdị maka ngwa ngwa",
-        icon: LightningBolt,
+        icon: Zap,
       },
       {
         title: "Ịchọ Ike",
@@ -191,3 +161,114 @@ const featureContent = {
   },
 }
 
+export default function FeatureSection({ 
+  language = "ENG" 
+}: { 
+  language: "ENG" | "HAU" | "YOR" | "IGB" 
+}) {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const content = featureContent[language]
+
+  useGSAP(() => {
+    if (!containerRef.current || !sectionRef.current) return
+
+    const container = containerRef.current
+    const cards = container.children
+    const totalCards = cards.length
+
+    // Each card = 100vw → total width = totalCards × 100vw
+    gsap.set(container, { width: `${totalCards * 100}vw` })
+
+    // Distance to move = everything except the first visible card
+    const distanceToMove = () => (totalCards - 1) * window.innerWidth
+
+    gsap.to(container, {
+      x: () => -distanceToMove(),
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: () => `+=${distanceToMove()}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+      },
+    })
+
+  }, { scope: sectionRef, dependencies: [language] })
+
+  return (
+    <>
+      {/* Fullscreen Pinned Horizontal Scroll Section */}
+      <section
+        ref={sectionRef}
+        className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-orange-50 to-purple-50"
+      >
+        {/* Optional decorative background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl" />
+        </div>
+
+        <div
+          ref={containerRef}
+          className="flex h-full"
+        >
+          {content.features.map((feature, i) => {
+            const Icon = feature.icon
+
+            return (
+              <div
+                key={i}
+                className="w-screen flex-shrink-0 flex items-center justify-center px-8"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="max-w-md w-full"
+                >
+                  <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/30">
+                    <div className="w-20 h-20 rounded-2xl bg-orange-100 flex items-center justify-center mb-8">
+                      <Icon className="w-10 h-10 text-orange-600" />
+                    </div>
+
+                    <h3 className="text-4xl font-black mb-6 text-gray-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="text-xl text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Optional next section after scroll ends */}
+      {/* <section className="h-screen bg-gradient-to-b from-purple-900 to-black flex items-center justify-center text-white">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-center px-8"
+        >
+          <h2 className="text-5xl md:text-7xl font-black mb-8">
+            {language === "ENG" ? "Ready to Make a Difference?" :
+             language === "HAU" ? "A shirye ku canza al'umma?" :
+             language === "YOR" ? "Ṣe o ti ṣetan lati ṣe iyipada?" :
+             "Ị dịla njikere ime mgbanwe?"}
+          </h2>
+          <button className="px-12 py-6 bg-orange-600 hover:bg-orange-700 text-xl font-bold rounded-full transition">
+            {language === "ENG" ? "Get Started Now" : "Bincika Yanzu"}
+          </button>
+        </motion.div>
+      </section> */}
+    </>
+  )
+}

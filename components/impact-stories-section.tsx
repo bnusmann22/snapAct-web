@@ -10,7 +10,7 @@ const translations = {
   ENG: {
     title: "Impact Stories",
     subtitle: "Real-world examples transforming our communities",
-    caseTitle: "Waste Cleanup in Accra",
+    caseTitle: "Waste Cleanup in Danbarre",
     caseDescription:
       "Users snapped overflowing bins; reports led to a community-driven cleanup event, removing 5 tons of waste.",
     byNumbers: "By the Numbers",
@@ -22,7 +22,7 @@ const translations = {
   HAU: {
     title: "Labarun Tasiri",
     subtitle: "Abubuwan gida da ke canza jama'a",
-    caseTitle: "Tsabtace Accra",
+    caseTitle: "Tsabtace Danbarre",
     caseDescription:
       "Masu amfani sun daukar hotuna; rahotanni sun haifar da taron jama'a, wanda ya cirewa kayan samu 5.",
     byNumbers: "Ta hanyar lambobi",
@@ -34,7 +34,7 @@ const translations = {
   YOR: {
     title: "Awon Itan Ipa",
     subtitle: "Awon apẹẹrẹ gidi ti o n ṣaṣeyori awon ilu wa",
-    caseTitle: "Itusilẹ Accra",
+    caseTitle: "Itusilẹ Danbarre",
     caseDescription:
       "Awon oniko lo gbẹhin awon foto; awon itan naa da ọna si idile ti o dan kigbe, ti o si muso oniko 5 tan.",
     byNumbers: "Nipa Awon Nọmba",
@@ -46,7 +46,7 @@ const translations = {
   IGB: {
     title: "Akụkọ Ndị Emero",
     subtitle: "Ihe omume na-eme ka ọ mụta na mpaghara anyị",
-    caseTitle: "Nhazi Accra",
+    caseTitle: "Nhazi Danbarre",
     caseDescription: "Ndị ọrụ weere ihe osise; akụkọ ndị ahụ mere ka njupụta ha kọọ, nke wepụtarakwu 5 nke mkpụmkpu.",
     byNumbers: "Site na Nọmba",
     reports: "1,000+ Ihe Omume",
