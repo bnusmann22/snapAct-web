@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { motion } from "framer-motion"
 import { Camera } from "lucide-react"
+import Image from "next/image"
 
 const heroContent = {
   ENG: {
@@ -33,6 +34,7 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
   const titleRef = useRef<HTMLHeadingElement>(null)
   const subtitleRef = useRef<HTMLParagraphElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
 
   const content = heroContent[language]
 
@@ -62,6 +64,20 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
           y: 0,
           duration: 0.8,
           delay: 0.5,
+          ease: "power3.out",
+        },
+      )
+    }
+
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.7,
           ease: "power3.out",
         },
       )
@@ -102,7 +118,7 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
         <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
+              <path d="M 40 0 L 0 0 0 40" fill="#0000" stroke="#888" strokeWidth="2" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -119,40 +135,56 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
         />
       </div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        {/* Comparison Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
-          style={{
-            background: "rgba(255, 107, 29, 0.08)",
-            backdropFilter: "blur(10px)",
-            border: "1px solid rgba(255, 107, 29, 0.2)",
-          }}
-        >
-          <Camera className="w-4 h-4" style={{ color: "var(--accent-primary)" }} />
-          <span className="text-sm font-medium">{content.comparison}</span>
-        </motion.div>
+      <div className="max-w-6xl mx-auto w-full relative z-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 items-center ">
+          {/* Left column - Text */}
+          <div className="space-y-8  md:col-span-3 pl-8">
+            {/* Comparison Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
+              style={{
+                background: "rgba(255, 107, 29, 0.08)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(255, 107, 29, 0.2)",
+              }}
+            >
+              <Camera className="w-4 h-4" style={{ color: "var(--accent-primary)" }} />
+              <span className="text-sm font-medium">{content.comparison}</span>
+            </motion.div>
 
-        {/* Main Title */}
-        <h1
-          ref={titleRef}
-          className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
-          style={{ color: "var(--primary)" }}
-        >
-          {content.title}
-        </h1>
+            {/* Main Title */}
+            <h1
+              ref={titleRef}
+              className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight "
+              style={{ color: "var(--primary)" }}
+            >
+              {content.title}
+            </h1>
 
-        {/* Subtitle */}
-        <p
-          ref={subtitleRef}
-          className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
-        >
-          {content.subtitle}
-        </p>
+            {/* Subtitle */}
+            <p ref={subtitleRef} className="text-lg md:text-2xl text-muted-foreground leading-relaxed">
+              {content.subtitle}
+            </p>
+          </div>
+
+          {/* Right column - Image */}
+          <div ref={imageRef} className="flex justify-center items-center md:col-span-2 ">
+            <div className="relative w-full max-w-sm h-96 md:h-[500px]">
+              <Image
+                src="/code.png"
+                alt="SnapAct mobile app preview"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+        </div>
       </div>
+
     </section>
   )
 }

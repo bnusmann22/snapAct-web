@@ -4,7 +4,7 @@ import { useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import HeroSection from "@/components/hero-section"
-import FeatureSection from "@/components/feature-section"
+// import FeatureSection from "@/components/feature-section"
 import HowItWorksSection from "@/components/how-it-works-section"
 import TranslationPane from "@/components/translation-pane"
 import ImpactStoriesSection from "@/components/impact-stories-section"
@@ -33,7 +33,7 @@ export default function Page() {
       <HowItWorksSection language={language} />
 
       {/* Feature Sections */}
-      <FeatureSection language={language} />
+      {/* <FeatureSection language={language} /> */}
 
       {/* Impact Stories Section */}
       <ImpactStoriesSection language={language} />
