@@ -9,7 +9,7 @@
   --accent-secondary: #2e5fb8;
 
   /* Light mode color scheme - light backgrounds with dark text */
-  --background: oklch(0.98 0 0);
+  --background: linear-gradient(135deg, rgba(7, 109, 46, 0.56) 0%, rgba(254, 248, 246, 1) 100%);
   --foreground: oklch(0.15 0 0);
   --card: oklch(0.95 0 0);
   --card-foreground: oklch(0.15 0 0);

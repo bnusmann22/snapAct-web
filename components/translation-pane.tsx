@@ -35,7 +35,7 @@ export default function TranslationPane({
               background: "rgba(255, 255, 255, 0.8)",
               backdropFilter: "blur(20px)",
               border: "1px solid rgba(255, 107, 29, 0.2)",
-              boxShadow: "0 25px 50px rgba(0, 0, 0, 0.1), inset 0 1px rgba(255, 255, 255, 0.5)",
+              boxShadow: "0 25px 50px rgba(0, 0, 0, 0.1), inset 0 1px rgba(5, 209, 83, 0.562)",
             }}
           >
             <div className="flex items-center justify-between mb-6">
@@ -59,11 +59,11 @@ export default function TranslationPane({
                   style={{
                     background: language === lang.code ? "rgba(255, 107, 29, 0.1)" : "rgba(0, 0, 0, 0.03)",
                     border:
-                      language === lang.code ? "2px solid rgba(255, 107, 29, 0.4)" : "1px solid rgba(0, 0, 0, 0.1)",
+                      language === lang.code ? "2px solid rgba(5, 209, 83, 0.562)" : "1px solid rgba(0, 0, 0, 0.1)",
                   }}
                 >
                   <span className="text-2xl">{lang.flag}</span>
-                  <span className="text-sm font-semibold text-foreground">{lang.code}</span>
+                  <span className="text-sm font-semibold text-green-600">{lang.code}</span>
                   <span className="text-xs text-muted-foreground">{lang.label}</span>
                 </motion.button>
               ))}
@@ -86,8 +86,8 @@ export default function TranslationPane({
             className="fixed top-6 right-6 z-40 px-4 py-2 rounded-full flex items-center justify-center transition-all duration-300 text-sm font-semibold"
             style={{
               background: "rgba(255, 107, 29, 0.1)",
-              border: "1px solid rgba(255, 107, 29, 0.3)",
-              color: "var(--accent-primary)",
+              border: "1px solid rgba(5, 209, 83, 0.562)",
+              color: "rgba(5, 209, 83, 0.562)",
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

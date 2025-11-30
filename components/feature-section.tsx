@@ -27,143 +27,45 @@ const featureContent = {
   HAU: {
     title: "Raportin Kasar Musamman",
     features: [
-      {
-        title: "Karɓa Nan Take",
-        description: "Sani matsayin da kyau ta jiya-jiya da kamera",
-        icon: Share2,
-      },
-      {
-        title: "Aiki na Gaske",
-        description: "Rajocinki ka kai tsaye ga jama'a",
-        icon: Zap,
-      },
-      {
-        title: "Kayan Jiya",
-        description: "Shiga kasua na gida da bettarwa",
-        icon: Globe,
-      },
-      {
-        title: "Kare Asiri",
-        description: "Encryption daga gida zuwa gida da cire sunaye",
-        icon: Lock,
-      },
-      {
-        title: "Ware Tutudde",
-        description: "AI yana tsara matsala don sauri",
-        icon: Zap,
-      },
-      {
-        title: "Bincika Ci Gaba",
-        description: "Samu sabbin labari game da abubuwan da ka sani",
-        icon: TrendingUp,
-      },
-      {
-        title: "Karfen Jama'a",
-        description: "Taɓa batu, tattauna, da girma aiki",
-        icon: Users2,
-      },
-      {
-        title: "Ingancin Wuri",
-        description: "Geo-tagging ta kansu don sani daidai",
-        icon: Map,
-      },
+      {title: "Karɓa Nan Take",description: "Sani matsayin da kyau ta jiya-jiya da kamera",icon: Share2,},
+      {title: "Aiki na Gaske",description: "Rajocinki ka kai tsaye ga jama'a",icon: Zap},
+      {title: "Kayan Jiya",description: "Shiga kasua na gida da bettarwa",icon: Globe},
+      {title: "Kare Asiri",description: "Encryption daga gida zuwa gida da cire sunaye",icon: Lock},
+      {title: "Ware Tutudde",description: "AI yana tsara matsala don sauri",icon: Zap},
+      {title: "Bincika Ci Gaba",description: "Samu sabbin labari game da abubuwan da ka sani",icon: TrendingUp},
+      {title: "Karfen Jama'a",description: "Taɓa batu, tattauna, da girma aiki",icon: Users2},
+      {title: "Ingancin Wuri",description: "Geo-tagging ta kansu don sani daidai",icon: Map},
     ],
   },
   YOR: {
     title: "Iroyin Aṣa Ilu Wipe",
     features: [
-      {
-        title: "Yanju Nipa Igbanu",
-        description: "Ṣẹda aworan ti isọkan ni abini pelu kamera",
-        icon: Share2,
-      },
-      {
-        title: "Ise Gidi",
-        description: "Iroyin rẹ tẹnumọ si awọn oluṣe ilu",
-        icon: Zap,
-      },
-      {
-        title: "Agbaye Laipin",
-        description: "Darapọ si agbegbe ti o ṣe ilu dara",
-        icon: Globe,
-      },
-      {
-        title: "Ifojusun Asiri",
-        description: "Encryption duro si owu ati ifirayese orukọ",
-        icon: Lock,
-      },
-      {
-        title: "Ọgbọ́ Abẹ̀",
-        description: "AI ṣe akiyesi ati ṣiṣe ẹka fun iṣu",
-        icon: Zap,
-      },
-      {
-        title: "Ṣawari Iyipada",
-        description: "Gba alaye laipin nipa isọkan rẹ",
-        icon: TrendingUp,
-      },
-      {
-        title: "Ẹgbẹ Agbegbe",
-        description: "Ye batu, tattauna, ki o diju iṣẹ ọkan",
-        icon: Users2,
-      },
-      {
-        title: "Aaye Ṣoṣo",
-        description: "Automatic geo-tagging fun sọ daidai",
-        icon: Map,
-      },
+      {title: "Yanju Nipa Igbanu",description: "Ṣẹda aworan ti isọkan ni abini pelu kamera",icon: Share2},
+      {title: "Ise Gidi",description: "Iroyin rẹ tẹnumọ si awọn oluṣe ilu",icon: Zap},
+      {title: "Agbaye Laipin",description: "Darapọ si agbegbe ti o ṣe ilu dara",icon: Globe},
+      {title: "Ifojusun Asiri",description: "Encryption duro si owu ati ifirayese orukọ",icon: Lock},
+      {title: "Ọgbọ́ Abẹ̀",description: "AI ṣe akiyesi ati ṣiṣe ẹka fun iṣu",icon: Zap},
+      {title: "Ṣawari Iyipada",description: "Gba alaye laipin nipa isọkan rẹ",icon: TrendingUp},
+      {title: "Ẹgbẹ Agbegbe",description: "Ye batu, tattauna, ki o diju iṣẹ ọkan",icon: Users2},
+      {title: "Aaye Ṣoṣo",description: "Automatic geo-tagging fun sọ daidai",icon: Map},
     ],
   },
   IGB: {
     title: "Ngosipụta Obodo Dị Ike",
     features: [
-      {
-        title: "Nweta Nweta",
-        description: "Debe ihe ọjọọ n'ụzọ ije ma ọ bu kamera",
-        icon: Share2,
-      },
-      {
-        title: "Ọrụ Eziokwu",
-        description: "Akụkọ gị bata na ndị ọrụ obodo",
-        icon: Zap,
-      },
-      {
-        title: "Mụmụ Ụwa",
-        description: "Soro mpaghara ime obodo kacha mma",
-        icon: Globe,
-      },
-      {
-        title: "Nchekwa Nzuzo",
-        description: "Mgbanaka na-egbeke na nnabata orụ aha",
-        icon: Lock,
-      },
-      {
-        title: "Nyocha Ọgbụgbụ",
-        description: "AI na-akọ ihe n'ime ụdị maka ngwa ngwa",
-        icon: Zap,
-      },
-      {
-        title: "Ịchọ Ike",
-        description: "Anụ ọkụ mma gbasara akụkọ gị",
-        icon: TrendingUp,
-      },
-      {
-        title: "Mmadụ Obodo",
-        description: "Tinye aka, sọrọ, ma tinye ike ọrụ",
-        icon: Users2,
-      },
-      {
-        title: "Ọnọdụ Ziri Ezi",
-        description: "Automatic geo-tagging maka ngosipụta kwesịrị ekwesị",
-        icon: Map,
-      },
+      {title: "Nweta Nweta",description: "Debe ihe ọjọọ n'ụzọ ije ma ọ bu kamera",icon: Share2},
+      {title: "Ọrụ Eziokwu",description: "Akụkọ gị bata na ndị ọrụ obodo",icon: Zap},
+      {title: "Mụmụ Ụwa",description: "Soro mpaghara ime obodo kacha mma",icon: Globe},
+      {title: "Nchekwa Nzuzo",description: "Mgbanaka na-egbeke na nnabata orụ aha",icon: Lock},
+      {title: "Nyocha Ọgbụgbụ",description: "AI na-akọ ihe n'ime ụdị maka ngwa ngwa",icon: Zap},
+      {title: "Ịchọ Ike",description: "Anụ ọkụ mma gbasara akụkọ gị",icon: TrendingUp},
+      {title: "Mmadụ Obodo",description: "Tinye aka, sọrọ, ma tinye ike ọrụ",icon: Users2},
+      {title: "Ọnọdụ Ziri Ezi",description: "Automatic geo-tagging maka ngosipụta kwesịrị ekwesị",icon: Map},
     ],
   },
 }
 
-export default function FeatureSection({ 
-  language = "ENG" 
-}: { 
+export default function FeatureSection({ language}: { 
   language: "ENG" | "HAU" | "YOR" | "IGB" 
 }) {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -176,6 +78,8 @@ export default function FeatureSection({
     const container = containerRef.current
     const cards = container.children
     const totalCards = cards.length
+    console.log(totalCards);
+    
 
     // Each card = 100vw → total width = totalCards × 100vw
     gsap.set(container, { width: `${totalCards * 100}vw` })
@@ -204,12 +108,12 @@ export default function FeatureSection({
       {/* Fullscreen Pinned Horizontal Scroll Section */}
       <section
         ref={sectionRef}
-        className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-orange-50 to-purple-50"
+        className="relative h-screen w-full overflow-hidden bg-linear-to-br from-white-50 to-green-80"
       >
         {/* Optional decorative background */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white-300/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-300/20 rounded-full blur-3xl" />
         </div>
 
         <div
@@ -222,7 +126,7 @@ export default function FeatureSection({
             return (
               <div
                 key={i}
-                className="w-screen flex-shrink-0 flex items-center justify-center px-8"
+                className="w-screen shrink-0 flex items-center justify-center px-8"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 60 }}
@@ -233,7 +137,7 @@ export default function FeatureSection({
                 >
                   <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/30">
                     <div className="w-20 h-20 rounded-2xl bg-orange-100 flex items-center justify-center mb-8">
-                      <Icon className="w-10 h-10 text-orange-600" />
+                      <Icon className="w-10 h-10 text-green-600" />
                     </div>
 
                     <h3 className="text-4xl font-black mb-6 text-gray-900">

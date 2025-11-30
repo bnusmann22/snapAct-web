@@ -102,10 +102,10 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
         <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
+              <path d="M 40 0 L 0 0 0 40" fill="rgba(7, 109, 46, 0.56)" stroke="rgba(7, 109, 46, 0.56)" strokeWidth="2" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="rgba(7, 109, 46, 0.56)" />
         </svg>
 
         {/* Accent shapes */}
@@ -129,10 +129,10 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
           style={{
             background: "rgba(255, 107, 29, 0.08)",
             backdropFilter: "blur(10px)",
-            border: "1px solid rgba(255, 107, 29, 0.2)",
+            border: "1px solid rgba(7, 109, 46, 0.56)",
           }}
         >
-          <Camera className="w-4 h-4" style={{ color: "var(--accent-primary)" }} />
+          <Camera className="w-4 h-4" style={{ color: "rgba(5, 209, 83, 0.562)" }} />
           <span className="text-sm font-medium">{content.comparison}</span>
         </motion.div>
 

@@ -83,7 +83,7 @@ export default function IntroSection({ language }: { language: "ENG" | "HAU" | "
   return (
     <section
       ref={containerRef}
-      className="relative w-full py-20 md:py-32 lg:py-40 px-4 overflow-hidden bg-gradient-to-b from-background via-orange-50/30 to-background"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-background via-orange-50/30 to-background "
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
