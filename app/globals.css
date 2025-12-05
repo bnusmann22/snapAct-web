@@ -5,8 +5,8 @@
 
 :root {
   /* Primary Colors - Burnt Orange & Mild Blue Theme */
-  --accent-primary: #ff6b1d;
-  --accent-secondary: #2e5fb8;
+  --accent-primary: rgba(7, 109, 46, 0.56);
+  --accent-secondary: rgba(254, 248, 246, 1);
 
   /* Light mode color scheme - light backgrounds with dark text */
   --background: linear-gradient(135deg, rgba(7, 109, 46, 0.56) 0%, rgba(254, 248, 246, 1) 100%);

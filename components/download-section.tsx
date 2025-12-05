@@ -83,11 +83,11 @@ export default function DownloadSection({ language }: { language: "ENG" | "HAU" 
 
         {/* App Store Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center ">
-          <button className=" cursor-pointer active:cursor-progress px-8 flex gap-2 py-4 bg-foreground text-background font-semibold rounded-lg hover:bg-foreground/90 transition-colors">
+          <button className=" cursor-pointer active:cursor-progress px-8 flex gap-2 py-4 bg-green-700 text-background font-semibold rounded-lg hover:text-white hover:bg-foreground/90 transition-colors">
             {/* <Apple size={24} /> */}
             {t.appStore}
           </button>
-          <button className="cursor-pointer active:cursor-progress px-8 py-4 bg-accent-primary text-black hover:text-white font-semibold rounded-lg hover:bg-orange-800 border-2 border-amber-950 transition-colors">
+          <button className="cursor-pointer active:cursor-progress px-8 py-4 bg-accent-primary text-black hover:text-white font-semibold rounded-lg hover:bg-green-700 border-2 border-amber-950 transition-colors">
             {t.googlePlay}
           </button>
         </div>

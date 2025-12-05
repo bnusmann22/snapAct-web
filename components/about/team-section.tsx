@@ -28,28 +28,28 @@ const translations = {
 const teamMembers = [
   {
     id: 1,
-    name: "Amara Okafor",
+    name: "Jamil Muhammad",
     role: "CEO & Co-founder",
     bio: "Tech entrepreneur focused on social impact",
     image: "/professional-woman-african-tech-leader.jpg",
   },
   {
     id: 2,
-    name: "Kofi Mensah",
+    name: "Idris Mukhtar",
     role: "CTO & Lead Engineer",
     bio: "AI specialist with 10+ years experience",
     image: "/professional-man-african-tech-engineer.jpg",
   },
   {
     id: 3,
-    name: "Zainab Hassan",
+    name: "Zainab Abdulazeez",
     role: "Community Manager",
     bio: "Bridging technology and grassroots movements",
     image: "/professional-woman-african-community-leader.jpg",
   },
   {
     id: 4,
-    name: "Chisom Nwosu",
+    name: "GodsPower AkpaKpan",
     role: "Design Lead",
     bio: "Creating intuitive experiences for all users",
     image: "/professional-woman-african-ux-designer.jpg",
