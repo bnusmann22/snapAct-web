@@ -72,12 +72,12 @@ export default function Footer({ language }: { language: "ENG" | "HAU" | "YOR" |
             <h4 className="font-semibold text-foreground mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
               <li>
-                <a href="#" className="hover:text-accent-primary transition-colors">
+                <a href="https://en.wikipedia.org/wiki/Privacy_policy" className="hover:text-accent-primary transition-colors">
                   {t.privacyPolicy}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent-primary transition-colors">
+                <a href="https://en.wikipedia.org/wiki/Terms_of_service" className="hover:text-accent-primary transition-colors">
                   Terms of Service
                 </a>
               </li>
@@ -106,16 +106,16 @@ export default function Footer({ language }: { language: "ENG" | "HAU" | "YOR" |
         <div className="border-t border-border pt-8">
           <p className="font-semibold text-foreground mb-4">{t.social}</p>
           <div className="flex gap-4 text-accent-primary">
-            <a href="#" className="hover:text-accent-secondary transition-colors font-semibold">
+            <a href="https://x.com/BnUsmann22" className="hover:text-accent-secondary transition-colors font-semibold">
               Twitter
             </a>
-            <a href="#" className="hover:text-accent-secondary transition-colors font-semibold">
+            <a href="https://www.instagram.com/bn_usmann24/" className="hover:text-accent-secondary transition-colors font-semibold">
               Instagram
             </a>
             <a href="#" className="hover:text-accent-secondary transition-colors font-semibold">
               Facebook
             </a>
-            <a href="#" className="hover:text-accent-secondary transition-colors font-semibold">
+            <a href="https://www.linkedin.com/in/abdullahi-jamil-26b940275/" className="hover:text-accent-secondary transition-colors font-semibold">
               LinkedIn
             </a>
           </div>
