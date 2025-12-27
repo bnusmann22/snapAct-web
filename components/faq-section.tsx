@@ -144,7 +144,7 @@ export default function FAQSection({ language }: { language: "ENG" | "HAU" | "YO
   return (
     <section
       ref={sectionRef}
-      className="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-background via-blue-50 to-background"
+      className="py-20 px-6 md:px-12 lg:px-20 bg-linear-to-b from-background via-blue-50 to-background"
     >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-foreground">{t.title}</h2>
