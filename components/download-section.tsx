@@ -71,7 +71,7 @@ export default function DownloadSection({ language }: { language: "ENG" | "HAU" 
   }, [language])
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-background to-orange-50">
+    <section ref={sectionRef} className="py-20 px-6 md:px-12 lg:px-20 bg-linear-to-b from-background to-orange-50">
       <div ref={contentRef} className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">{t.title}</h2>
         <p className="text-lg text-muted-foreground mb-4">{t.subtitle}</p>
@@ -87,7 +87,7 @@ export default function DownloadSection({ language }: { language: "ENG" | "HAU" 
             {/* <Apple size={24} /> */}
             {t.appStore}
           </button>
-          <button className="cursor-pointer active:cursor-progress px-8 py-4 bg-accent-primary text-black hover:text-white font-semibold rounded-lg hover:bg-green-700 border-2 border-amber-950 transition-colors">
+          <button className="cursor-pointer active:cursor-progress px-8 py-4 bg-accent-primary text-black font-semibold rounded-lg border-2 border-amber-950 ">
             {t.googlePlay}
           </button>
         </div>
