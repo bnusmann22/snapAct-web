@@ -71,25 +71,47 @@ export default function DownloadSection({ language }: { language: "ENG" | "HAU" 
   }, [language])
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 md:px-12 lg:px-20 bg-linear-to-b from-background to-orange-50">
-      <div ref={contentRef} className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">{t.title}</h2>
-        <p className="text-lg text-muted-foreground mb-4">{t.subtitle}</p>
+    <section ref={sectionRef} className="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-white via-orange-50/30 to-white">
+      <div ref={contentRef} className="max-w-5xl mx-auto">
+        {/* Main Content Card */}
+        <div className="glass rounded-3xl p-12 md:p-16 text-center space-y-8 shadow-xl">
+          <div className="space-y-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">{t.title}</h2>
+            <p className="text-xl md:text-2xl text-slate-600 font-medium">{t.subtitle}</p>
+          </div>
 
-        <div className="bg-card border border-border rounded-2xl p-12 mb-8">
-          <p className="text-xl font-semibold text-foreground mb-2">{t.teaser}</p>
-          <p className="text-foreground/70">{t.cta}</p>
-        </div>
+          <div className="py-8">
+            <p className="text-lg text-slate-700 mb-2 font-semibold">{t.teaser}</p>
+            <p className="text-base text-slate-500">{t.cta}</p>
+          </div>
 
-        {/* App Store Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center ">
-          <button className=" cursor-pointer active:cursor-progress px-8 flex gap-2 py-4 bg-green-700 text-background font-semibold rounded-lg hover:text-white hover:bg-foreground/90 transition-colors">
-            {/* <Apple size={24} /> */}
-            {t.appStore}
-          </button>
-          <button className="cursor-pointer active:cursor-progress px-8 py-4 bg-accent-primary text-black font-semibold rounded-lg border-2 border-amber-950 ">
-            {t.googlePlay}
-          </button>
+          {/* App Store Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="group w-full sm:w-auto cursor-pointer px-8 py-4 bg-secondary text-white font-bold rounded-full hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2">
+              <Apple size={24} />
+              {t.appStore}
+            </button>
+            <button className="group w-full sm:w-auto cursor-pointer px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-primary/90 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2">
+              <Play size={24} />
+              {t.googlePlay}
+            </button>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-sm text-slate-500">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              <span>Free Download</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              <span>No Credit Card</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              <span>iOS & Android</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

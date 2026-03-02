@@ -1,13 +1,7 @@
 "use client"
 
-import { useGSAP } from "@gsap/react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useRef } from "react"
 import { motion } from "framer-motion"
 import { Share2, Zap, Globe, Lock, TrendingUp, Users2, Map } from "lucide-react"
-
-gsap.registerPlugin(ScrollTrigger)
 
 // Keep your full multilingual data exactly as you had it
 const featureContent = {
@@ -68,111 +62,63 @@ const featureContent = {
 export default function FeatureSection({ language}: { 
   language: "ENG" | "HAU" | "YOR" | "IGB" 
 }) {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
   const content = featureContent[language]
 
-  useGSAP(() => {
-    if (!containerRef.current || !sectionRef.current) return
-
-    const container = containerRef.current
-    const cards = container.children
-    const totalCards = cards.length
-    console.log(totalCards);
-    
-
-    // Each card = 100vw → total width = totalCards × 100vw
-    gsap.set(container, { width: `${totalCards * 100}vw` })
-
-    // Distance to move = everything except the first visible card
-    const distanceToMove = () => (totalCards - 1) * window.innerWidth
-
-    gsap.to(container, {
-      x: () => -distanceToMove(),
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: () => `+=${distanceToMove()}`,
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-      },
-    })
-
-  }, { scope: sectionRef, dependencies: [language] })
-
   return (
-    <>
-      {/* Fullscreen Pinned Horizontal Scroll Section */}
-      <section
-        ref={sectionRef}
-        className="relative h-screen w-full overflow-hidden bg-linear-to-br from-white-50 to-green-80"
-      >
-        {/* Optional decorative background */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white-300/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-300/20 rounded-full blur-3xl" />
+    <section className="relative py-20 md:py-32 px-4 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
+      {/* Background Elements */}
+      <div className="absolute inset-0 -z-10 opacity-30">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-1 bg-brand-primary/10 rounded-full mb-4">
+            <span className="text-sm font-semibold text-brand-primary">Features</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4">
+            {content.title}
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Everything you need to create real civic impact
+          </p>
         </div>
 
-        <div
-          ref={containerRef}
-          className="flex h-full"
-        >
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {content.features.map((feature, i) => {
             const Icon = feature.icon
 
             return (
-              <div
+              <motion.div
                 key={i}
-                className="w-screen shrink-0 flex items-center justify-center px-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="max-w-md w-full"
-                >
-                  <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/30">
-                    <div className="w-20 h-20 rounded-2xl bg-orange-100 flex items-center justify-center mb-8">
-                      <Icon className="w-10 h-10 text-green-600" />
-                    </div>
-
-                    <h3 className="text-4xl font-black mb-6 text-gray-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="text-xl text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
+                <div className="h-full glass rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-brand-primary/10 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-300 flex items-center justify-center mb-4">
+                    <Icon className="w-7 h-7 text-brand-primary group-hover:text-white transition-colors" />
                   </div>
-                </motion.div>
-              </div>
+
+                  <h3 className="text-xl font-black mb-3 text-slate-900 group-hover:text-brand-primary transition-colors">
+                    {feature.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </motion.div>
             )
           })}
         </div>
-      </section>
-
-      {/* Optional next section after scroll ends */}
-      {/* <section className="h-screen bg-gradient-to-b from-purple-900 to-black flex items-center justify-center text-white">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-center px-8"
-        >
-          <h2 className="text-5xl md:text-7xl font-black mb-8">
-            {language === "ENG" ? "Ready to Make a Difference?" :
-             language === "HAU" ? "A shirye ku canza al'umma?" :
-             language === "YOR" ? "Ṣe o ti ṣetan lati ṣe iyipada?" :
-             "Ị dịla njikere ime mgbanwe?"}
-          </h2>
-          <button className="px-12 py-6 bg-orange-600 hover:bg-orange-700 text-xl font-bold rounded-full transition">
-            {language === "ENG" ? "Get Started Now" : "Bincika Yanzu"}
-          </button>
-        </motion.div>
-      </section> */}
-    </>
+      </div>
+    </section>
   )
 }

@@ -144,29 +144,32 @@ export default function FAQSection({ language }: { language: "ENG" | "HAU" | "YO
   return (
     <section
       ref={sectionRef}
-      className="py-20 px-6 md:px-12 lg:px-20 bg-linear-to-b from-background via-blue-50 to-background"
+      className="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-white via-slate-50 to-white"
     >
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-foreground">{t.title}</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">{t.title}</h2>
+          <p className="text-lg text-slate-600">Everything you need to know about SnapAct</p>
+        </div>
 
         <div className="space-y-4">
           {t.faqItems.map((item, index) => (
-            <div key={index} className="faq-item bg-card border border-border rounded-xl overflow-hidden">
+            <div key={index} className="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all">
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-secondary/50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between hover:bg-slate-50 transition-colors group"
               >
-                <h3 className="text-lg font-semibold text-foreground text-left">{item.question}</h3>
+                <h3 className="text-lg font-bold text-slate-900 text-left pr-4 group-hover:text-brand-primary transition-colors">{item.question}</h3>
                 <ChevronDown
-                  className={`w-5 h-5 text-accent-primary transition-transform duration-300 ${
+                  className={`w-5 h-5 text-brand-primary transition-transform duration-300 flex-shrink-0 ${
                     expandedIndex === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
 
               {expandedIndex === index && (
-                <div className="px-6 pb-4 border-t border-border">
-                  <p className="text-foreground/70 leading-relaxed">{item.answer}</p>
+                <div className="px-6 pb-5 border-t border-slate-100">
+                  <p className="text-slate-600 leading-relaxed pt-4">{item.answer}</p>
                 </div>
               )}
             </div>

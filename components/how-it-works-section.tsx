@@ -163,19 +163,24 @@ export default function HowItWorksSection({ language }: { language: "ENG" | "HAU
   return (
     <section
       ref={containerRef}
-      className="relative py-24 px-4 overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, rgba(246, 248, 252, 1) 0%, rgba(254, 248, 246, 1) 100%)",
-      }}
+      className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "var(--primary)" }}>
+          <div className="inline-block px-4 py-1 bg-brand-primary/10 rounded-full mb-4">
+            <span className="text-sm font-semibold text-brand-primary">Simple Process</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-slate-900">
             {content.title}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             {language === "ENG"
-              ? "Understand the simple journey from identifying an issue to creating community impact."
+              ? "Report civic issues in seconds with our streamlined process."
               : language === "HAU"
                 ? "Fahimta jiya mai sauki daga nemo matsala zuwa abubuwan da aka samu."
                 : language === "YOR"
@@ -184,7 +189,7 @@ export default function HowItWorksSection({ language }: { language: "ENG" | "HAU
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8\">
           {content.steps.map((step, index) => {
             const Icon = step.icon
             return (
@@ -193,49 +198,32 @@ export default function HowItWorksSection({ language }: { language: "ENG" | "HAU
                 ref={(el) => {
                   if (el) stepsRef.current[index] = el
                 }}
-                whileHover={{ y: -5 }}
-                className="relative"
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="relative group"
               >
-                <div
-                  className="p-8 rounded-2xl"
-                  style={{ background: "rgba(255, 255, 255, 0.6)", border: "1px solid rgba(0, 0, 0, 0.05)" }}
-                >
-                  {/* Step Number */}
-                  <div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-xl font-black text-2xl mb-6"
-                    style={{
-                      background: "linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))",
-                      color: "white",
-                    }}
-                  >
+                <div className="h-full p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
+                  {/* Step Number Badge */}
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl font-black text-xl mb-6 bg-gradient-to-br from-brand-primary to-green-600 text-white shadow-lg shadow-brand-primary/25">
                     {step.number}
                   </div>
 
                   {/* Icon */}
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                    style={{
-                      background: "rgba(255, 107, 29, 0.1)",
-                    }}
-                  >
-                    <Icon className="w-6 h-6" style={{ color: "var(--accent-primary)" }} />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors">
+                    <Icon className="w-7 h-7 text-brand-accent" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-black mb-3 text-slate-900">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm">{step.description}</p>
 
-                  {/* Connection line */}
+                  {/* Connector Arrow for Desktop */}
                   {index < content.steps.length - 1 && (
-                    <div className="hidden md:block absolute -bottom-12 -right-6 w-12 h-12">
-                      <svg
-                        viewBox="0 0 100 100"
-                        className="w-full h-full"
-                        style={{ stroke: "var(--accent-primary)", opacity: 0.2 }}
-                      >
-                        <path d="M 50 0 Q 50 50 0 100" fill="none" strokeWidth="2" />
-                        <path d="M 0 85 L -5 95 L 0 92 L 5 95" fill="currentColor" />
-                      </svg>
+                    <div className="hidden lg:block absolute top-12 -right-4 z-10">
+                      <div className="w-8 h-8 rounded-full bg-white border-2 border-brand-primary flex items-center justify-center">
+                        <svg className="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
                   )}
                 </div>

@@ -35,32 +35,40 @@ export default function Footer({ language }: { language: "ENG" | "HAU" | "YOR" |
   const t = translations[language]
 
   return (
-    <footer className="bg-gradient-to-b from-orange-50 to-background border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-12">
+    <footer className="bg-gradient-to-b from-slate-50 to-white border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div>
-            <h3 className="text-xl font-bold text-accent-primary mb-2">SnapAct</h3>
-            <p className="text-sm text-foreground/60">{t.tagline}</p>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-black text-brand-primary">SnapAct</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">{t.tagline}</p>
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-brand-primary/10 hover:bg-brand-primary hover:text-white transition-all">
+                <span className="text-lg">𝕏</span>
+              </a>
+              <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-brand-primary/10 hover:bg-brand-primary hover:text-white transition-all">
+                <span className="text-lg">in</span>
+              </a>
+            </div>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">{t.aboutUs}</h4>
-            <ul className="space-y-2 text-sm text-foreground/70">
+            <h4 className="font-bold text-slate-900 mb-4">{t.aboutUs}</h4>
+            <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <a href="/about" className="hover:text-accent-primary transition-colors">
+                <a href="/about" className="hover:text-brand-primary transition-colors inline-block hover:translate-x-1 transition-transform">
                   {t.aboutUs}
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-accent-primary transition-colors">
+                <a href="/about" className="hover:text-brand-primary transition-colors inline-block hover:translate-x-1 transition-transform">
                   Team
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-accent-primary transition-colors">
+                <a href="/about" className="hover:text-brand-primary transition-colors inline-block hover:translate-x-1 transition-transform">
                   Blog
                 </a>
               </li>
@@ -69,15 +77,15 @@ export default function Footer({ language }: { language: "ENG" | "HAU" | "YOR" |
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-foreground/70">
+            <h4 className="font-bold text-slate-900 mb-4">Legal</h4>
+            <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <a href="https://en.wikipedia.org/wiki/Privacy_policy" className="hover:text-accent-primary transition-colors">
+                <a href="https://en.wikipedia.org/wiki/Privacy_policy" className="hover:text-brand-primary transition-colors inline-block hover:translate-x-1 transition-transform">
                   {t.privacyPolicy}
                 </a>
               </li>
               <li>
-                <a href="https://en.wikipedia.org/wiki/Terms_of_service" className="hover:text-accent-primary transition-colors">
+                <a href="https://en.wikipedia.org/wiki/Terms_of_service" className="hover:text-brand-primary transition-colors inline-block hover:translate-x-1 transition-transform">
                   Terms of Service
                 </a>
               </li>
@@ -86,15 +94,15 @@ export default function Footer({ language }: { language: "ENG" | "HAU" | "YOR" |
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">{t.contact}</h4>
-            <ul className="space-y-2 text-sm text-foreground/70">
+            <h4 className="font-bold text-slate-900 mb-4">{t.contact}</h4>
+            <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <a href="mailto:hello@snapact.com" className="hover:text-accent-primary transition-colors">
+                <a href="mailto:hello@snapact.com" className="hover:text-brand-primary transition-colors inline-block hover:translate-x-1 transition-transform">
                   hello@snapact.com
                 </a>
               </li>
               <li>
-                <a href="tel:+234-800-000-0000" className="hover:text-accent-primary transition-colors">
+                <a href="tel:+234-800-000-0000" className="hover:text-brand-primary transition-colors inline-block hover:translate-x-1 transition-transform">
                   +234-800-000-0000
                 </a>
               </li>
