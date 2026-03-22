@@ -3,28 +3,37 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { motion } from "framer-motion"
-import { Camera } from "lucide-react"
+import { Camera, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const heroContent = {
   ENG: {
     title: "Report with Pictures",
     subtitle: "...it's just like Snapchat, but takes action",
     comparison: "Like Snapchat, but for civic action",
+    cta1: "Get Started",
+    cta2: "Learn More",
   },
   HAU: {
     title: "Tabbatar da Hotuna",
     subtitle: "...kama Snapchat, amma yana aiki",
     comparison: "Kamar Snapchat, amma don aiki na gida",
+    cta1: "Fara Aiki",
+    cta2: "Koyi Kaari",
   },
   YOR: {
     title: "Iroyin Pelu Aworan",
     subtitle: "...kan Snapchat, ṣugbọn ṣe-ise",
     comparison: "Gẹgẹ bi Snapchat, ṣugbọn fun iṣe ti aṣa",
+    cta1: "Bẹrẹ Iṣẹ",
+    cta2: "Kọ Kari",
   },
   IGB: {
     title: "Mara Maka Ihe Ngosi",
     subtitle: "...dika Snapchat, mana ọ na-arụ ọrụ",
     comparison: "Dika Snapchat, mana maka ọrụ obodo",
+    cta1: "Malite Mma",
+    cta2: "Mụta Karịa",
   },
 }
 
@@ -83,7 +92,7 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-4"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-4 md:px-8"
       style={{
         background: "linear-gradient(135deg, rgba(249, 246, 244, 1) 0%, rgba(240, 245, 250, 1) 100%)",
       }}
@@ -93,8 +102,8 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
         className="absolute inset-0 -z-10 overflow-hidden"
         style={{
           background: `
-            radial-gradient(circle at 20% 50%, rgba(255, 107, 29, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(46, 95, 184, 0.08) 0%, transparent 50%)
+            radial-gradient(circle at 20% 50%, color-mix(in oklch, var(--accent-primary) 8%, transparent) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, color-mix(in oklch, var(--accent-secondary) 8%, transparent) 0%, transparent 50%)
           `,
         }}
       >
@@ -119,39 +128,108 @@ export default function HeroSection({ language }: { language: "ENG" | "HAU" | "Y
         />
       </div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        {/* Comparison Badge */}
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12">
+        {/* Left Column - Text and CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
-          style={{
-            background: "rgba(255, 107, 29, 0.08)",
-            backdropFilter: "blur(10px)",
-            border: "1px solid rgba(7, 109, 46, 0.56)",
-          }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-8"
         >
-          <Camera className="w-4 h-4" style={{ color: "rgba(5, 209, 83, 0.562)" }} />
-          <span className="text-sm font-medium">{content.comparison}</span>
+          {/* Comparison Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full w-fit"
+            style={{
+              background: "color-mix(in oklch, var(--accent-primary) 8%, transparent)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid color-mix(in oklch, var(--accent-secondary) 22%, transparent)",
+            }}
+          >
+            <Camera className="w-4 h-4" style={{ color: "var(--accent-secondary)" }} />
+            <span className="text-sm font-medium">{content.comparison}</span>
+          </motion.div>
+
+          {/* Main Title */}
+          <h1
+            ref={titleRef}
+            className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight"
+            style={{ color: "var(--primary)" }}
+          >
+            {content.title}
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            ref={subtitleRef}
+            className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl"
+          >
+            {content.subtitle}
+          </p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap gap-4 pt-4"
+          >
+            <Button
+              size="lg"
+              className="px-8 py-3 text-base font-semibold"
+              style={{ background: "var(--accent-primary)", color: "var(--accent-foreground)" }}
+            >
+              {content.cta1}
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="px-8 py-3 text-base font-semibold"
+            >
+              {content.cta2}
+            </Button>
+          </motion.div>
         </motion.div>
 
-        {/* Main Title */}
-        <h1
-          ref={titleRef}
-          className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
-          style={{ color: "var(--primary)" }}
+        {/* Right Column - 3 Image Collage */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="grid grid-cols-2 gap-4 h-96"
         >
-          {content.title}
-        </h1>
+          {/* Large image top left */}
+          <div className="col-span-1 row-span-2 rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop"
+              alt="Community reporting"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            />
+          </div>
 
-        {/* Subtitle */}
-        <p
-          ref={subtitleRef}
-          className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
-        >
-          {content.subtitle}
-        </p>
+          {/* Top right image */}
+          <div className="col-span-1 rounded-lg overflow-hidden shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=300&h=280&fit=crop"
+              alt="Civic action"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+
+          {/* Bottom right image */}
+          <div className="col-span-1 rounded-lg overflow-hidden shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=280&fit=crop"
+              alt="Making impact"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+        </motion.div>
+        </div>
       </div>
     </section>
   )
